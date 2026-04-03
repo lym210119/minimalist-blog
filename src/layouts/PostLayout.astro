@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  pubDate: Date;
+}
+
+const { title, description, pubDate } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('zh-CN', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<article class="container py-12">
+  <header class="mb-8 fade-in">
+    <time class="text-small block mb-3">{formattedDate}</time>
+    <h1 class="text-display mb-4">{title}</h1>
+    {description && <p class="text-body">{description}</p>}
+  </header>
+  
+  <div class="divider"></div>
+  
+  <div class="prose fade-in">
+    <slot />
+  </div>
+  
+  <div class="divider mt-12"></div>
+  
+  <div class="fade-in">
+    <a href="/" class="text-small hover:opacity-60">← 返回首页</a>
+  </div>
+</article>

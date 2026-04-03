@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="关于 - 极简博客">
+  <Header title="极简博客" />
+  
+  <main class="container py-12 fade-in">
+    <h1 class="text-display mb-8">关于</h1>
+    
+    <div class="prose">
+      <p>
+        这是一个极简主义博客，专注于内容本身。
+      </p>
+      
+      <p>
+        设计理念：Less is More。去除所有不必要的装饰，只保留最核心的功能和内容。
+      </p>
+      
+      <h2>技术栈</h2>
+      
+      <ul>
+        <li>Astro 5.x</li>
+        <li>Tailwind CSS 4.x</li>
+        <li>Markdown</li>
+      </ul>
+      
+      <h2>特性</h2>
+      
+      <ul>
+        <li>极简主义设计</li>
+        <li>完美的暗黑模式支持</li>
+        <li>快速加载</li>
+        <li>响应式布局</li>
+      </ul>
+    </div>
+    
+    <div class="divider mt-12"></div>
+    
+    <a href="/" class="text-small hover:opacity-60">← 返回首页</a>
+  </main>
+  
+  <Footer />
+</Layout>

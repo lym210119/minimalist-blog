@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  slug: string;
+}
+
+const { title, description, pubDate, slug } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('zh-CN', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric'
+});
+---
+
+<article class="fade-in">
+  <a href={`/posts/${slug}/`} class="block mb-8 group">
+    <time class="text-small block mb-2">{formattedDate}</time>
+    <h2 class="text-title mb-2 group-hover:opacity-60 transition-opacity">
+      {title}
+    </h2>
+    <p class="text-body line-clamp-2">
+      {description}
+    </p>
+  </a>
+  <div class="divider"></div>
+</article>
